@@ -6,7 +6,7 @@ function listing_author_link( $content ) {
  
 global $post;
  
-// Detect if it is a single post with a post author
+// the code will be added only for listings
 if ( is_singular( 'listing' ) && isset( $post->post_author ) ) {
  
 // Get author's display name 
@@ -24,12 +24,10 @@ if ( ! empty( $display_name ) )
 $author_details = '<span><b>Productora u Organizador</b></span>';
  
 if ( ! empty( $user_description ) )
-// Author avatar and bio
  
 $author_details .= '<p class="author_details">' . nl2br( $user_description ). '</p>';
  
 $author_details .= '<p class="author_links"><a href="'. $user_posts .'">' . $display_name . '</a>';    
-
  
 // Pass all this info to post content  
 $content = $content . '<footer class="property-details-col2 one-half" >' . $author_details . '</footer>';
